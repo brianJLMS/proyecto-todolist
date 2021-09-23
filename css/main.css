@@ -1,0 +1,170 @@
+/* Importaciones */
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+
+/* Custom Properties */
+:root {
+  --btn-delete: #ff3737;
+  --btn-edit: #ffe23e;
+  --primary-color: #447fff;
+  --second-color: #aa4fff;
+  --third-color: #c78bff;
+  --success-color: #00e676;
+}
+
+/* Globales */
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "IBM Plex Mono", monospace;
+  background-color: var(--second-color);
+}
+
+[type="checkbox"] {
+  display: none;
+}
+label {
+  padding-left: 1.3em;
+  position: relative;
+}
+
+label::before {
+  content: "";
+  border: solid 1px var(--primary-color);
+  border-radius: 3px;
+  width: 0.9em;
+  height: 0.9em;
+  position: absolute;
+  left: 0px;
+  top: 0.3em;
+  transition: all 0.2s;
+  transform: rotate(0deg);
+}
+[type="checkbox"]:checked + label::before {
+  border-color: var(--success-color);
+  color: var(--success-color);
+  content: "\f00c";
+  font-family: FontAwesome;
+  transform: rotate(360deg);
+}
+
+.container {
+  width: 85%;
+  height: 80vh;
+  margin: 5rem auto 0 auto;
+}
+
+/* Lista */
+.principal {
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+  background-color: var(--primary-color);
+}
+
+.principal__title {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.principal__form {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--third-color);
+}
+
+.form__input {
+  height: 3.2rem;
+  margin-bottom: 1rem;
+  border: thin solid var(--second-color);
+  border-radius: 5px;
+}
+
+.form__submit {
+  width: 200px;
+  margin: 0 auto;
+  font-weight: 500;
+  height: 35px;
+  border: 2.5px solid;
+  border-radius: 15px;
+  background-color: var(--second-color);
+  cursor: pointer;
+  transition: color 0.5s;
+}
+.form__submit:hover {
+  color: var(--third-color);
+}
+
+.task {
+  margin-top: 2rem;
+  padding: 1rem;
+  height: 45%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: var(--second-color);
+}
+@media screen and (min-width: 768px) {
+  .task {
+    margin-top: 3rem;
+    height: 50%;
+  }
+}
+
+.task__item {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--third-color);
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.task__checkbox {
+  margin-bottom: 1rem;
+}
+
+.task__date {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.btn {
+  border: none;
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.btn__edit {
+  background-color: var(--btn-edit);
+}
+
+.btn__delete {
+  background-color: var(--btn-delete);
+}
+
+.success {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--success-color);
+  margin: 0;
+  height: 45px;
+}
+.success__text {
+  margin: 0;
+  font-weight: 600;
+  color: #fff;
+}
+.success.hidden {
+  display: none;
+}

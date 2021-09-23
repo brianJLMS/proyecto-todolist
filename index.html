@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de tareas</title>
+    <link
+      rel="stylesheet"
+      href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="success hidden">
+      <p class="success__text">La tarea ha sido Eliminada con éxito.</p>
+    </div>
+    <main class="principal container">
+      <h1 class="principal__title">Lista de Tareas por hacer</h1>
+      <form id="form" class="principal__form">
+        <input
+          type="text"
+          name="task"
+          placeholder="Escribe la Tarea"
+          class="form__input"
+          required
+        />
+
+        <input type="date" name="date" class="form__input" required />
+
+        <input
+          type="submit"
+          name="submit"
+          value="Listar"
+          class="form__submit"
+        />
+
+        <input type="hidden" name="id" />
+      </form>
+
+      <div class="task" id="tasks"></div>
+    </main>
+
+    <script
+      src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"
+      type="module"
+    ></script>
+    <script
+      src="https://www.gstatic.com/firebasejs/8.2.0/firebase-database.js"
+      type="module"
+    ></script>
+    <script src="js/main.js" type="module"></script>
+  </body>
+</html>
